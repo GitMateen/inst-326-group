@@ -1,0 +1,67 @@
+import random
+
+class TriviaGame:
+    def __init__(self):
+        self.questions = {
+            "easy": [
+                "What is the presidents last name?",
+                "What is ",
+                "What is ",
+                "What is ?",
+                "What is ?"
+            ],
+            "medium": [
+                "What is the average weight of a cow ?",
+                "What is ?",
+                "What is ",
+                "What is ",
+                "Who was "
+            ],
+            "hard": [
+                "What is dolalnd trumps sons name ",
+                "What is ",
+                "What is ",
+                "What is",
+                "What is "
+            ]
+        }
+        self.answers = {
+            "biden": "easy",
+            "": "easy",
+            "": "easy",
+            "": "easy",
+            "": "easy",
+            "600": "medium",
+            "": "medium",
+            "": "medium",
+            "": "medium",
+            "": "medium",
+            "baron": "hard",
+            "": "hard",
+            "": "hard",
+            "": "hard",
+            "": "hard"
+        }
+        self.questions_asked = []
+        self.num_correct = 0
+        self.num_wrong = 0
+
+
+
+    def get_question(self, level):
+        """Randomly selects a question from the given difficulty level."""
+        question = random.choice(self.questions[level])
+        # Make sure we haven't asked this question already
+        while question in self.questions_asked:
+            question = random.choice(self.questions[level])
+        self.questions_asked.append(question)
+        return question
+    
+    def play(self):
+        print(f"Hello, Player {name.1} and Player{name.2} We will be playing a trivia game....")
+
+
+    
+# Play the game
+game = TriviaGame()
+game.play()
