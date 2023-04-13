@@ -12,7 +12,7 @@ I think we can do more than 6 if we need them. idk.
 -import random (specificaly we'll prolly need choices()). y'all add more 
 
 class Game:
-
+Mateen 
     A class representing a movie trivia game.
 
     Attributes:
