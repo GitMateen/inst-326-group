@@ -24,10 +24,12 @@ class Game:
     Methods:
     - set_difficulty(level): Sets the difficulty level of the game to the given level.
     - ask_question(): Asks a random question from the list of questions and returns the answer.
-    
+    - score(): Keeps track of player's score.
+
 
 class Player:
-    
+Emmanuel Akpalu
+
     A class representing a player in the movie trivia game.
 
     Attributes:
@@ -37,7 +39,7 @@ class Player:
     Methods:
     - get_name(): Returns the name of the player.
     - update_score(points): Updates the player's score by adding the given number of points.
-    
+
 
 class Movie:
     
