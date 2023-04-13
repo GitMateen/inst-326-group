@@ -42,7 +42,7 @@ Emmanuel Akpalu
 
 
 class Movie:
-    
+Romeo Alvarenga
     A class representing a movie.
 
     Attributes:
