@@ -6,7 +6,8 @@ Problem Statement: Create a movie trivia game where the user(i.e the player) has
                     - There are three difficulty levels(i.e hard, medium, and easy). Three questions per difficulty.
                     - We should prolly add more questions idk.
 
-We can each pick a class. And then decide which of the 6 techniques we'll each take. I think we can do more than 6 if we need them. idk.
+We can each pick a class. And then decide which of the 6 techniques we'll each take. 
+I think we can do more than 6 if we need them. idk.
 
 -import random (specificaly we'll prolly need choices()). y'all add more 
 
