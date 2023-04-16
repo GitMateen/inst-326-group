@@ -1,84 +1,41 @@
-import random
 
-class TriviaGame:
-    def __init__(self):
-        self.questions = {
+ self.questions = {
             "easy": [
+                "What movie features a young lion named Simba and his journey to become king of the Pride Lands?",
+                "What movie is based on the story of a wooden puppet who dreams of becoming a real boy?",
+                "What movie follows the adventures of a group of monsters who work at a company that scares children for a living?",
                 "What is the ",
-                "What is the ",
-                "What is the ",
-                "What is the ",
-                "What is the "
+                "What"
             ],
             "medium": [
-                "What is the ",
-                "What is the ",
-                "What is the ",
+                "What movie is based on the true story of an African-American football coach who takes over a high school team in Virginia during segregation?",
+                "What movie follows the story of a young girl named Chihiro who is transported to a magical world where she must work in a bathhouse for spirits to save her parents?",
+                "In what movie does a group of teenagers in detention discover a mysterious board game that transports them into a jungle adventure?",
                 "What is the",
                 "Who was the "
             ],
             "hard": [
-                "What is ",
-                "What is ",
-                "What is =",
-                "What is ",
-                "What is "
+                "What was the top grossing movie in 2022",
+                "Who is the character in the movie 12 years a slave who was a free man but kidnapped and sold into slavery?",
+                "What",
+                "What",
+                "Who"
             ]
         }
         self.answers = {
+            "The Lion King": "easy",
+            "Pinocchio": "easy",
+            "Monsters, Inc.": "easy",
             "": "easy",
             "": "easy",
-            "": "easy",
-            "": "easy",
-            "": "easy",
-            "": "medium",
-            "": "medium",
-            "": "medium",
+            "Remember the Titans": "medium",
+            "Spirited Away": "medium",
+            "Jumanji": "medium",
             "": "medium",
             " ": "medium",
-            "": "hard",
-            "": "hard",
+            "Top Gun: Maverick": "hard",
+            "Solomon Northup": "hard",
             "": "hard",
             "": "hard",
             "": "hard"
         }
-        self.questions_asked = []
-        self.num_correct = 0
-        self.num_wrong = 0
-
-    def get_question(self, level):
-        """Randomly selects a question from the given difficulty level."""
-        question = random.choice(self.questions[level])
-        # Make sure we haven't asked this question already
-        while question in self.questions_asked:
-            question = random.choice(self.questions[level])
-        self.questions_asked.append(question)
-        return question
-    
-    def play(self):
-        print("Welcome to the Trivia Game!")
-        while True:
-            # Ask the user for the difficulty level
-            level = input("Choose a difficulty level (easy, medium, hard): ")
-            if level not in self.questions:
-                print("Invalid difficulty level. Please choose again.")
-                continue
-            # Get a question and ask the user
-            question = self.get_question(level)
-            print(question)
-            answer = input("Enter your answer: ").lower()
-            # Check if the answer is correct
-            if answer == self.answers.get(question.lower()):
-                print("Correct!")
-                self.num_correct += 1
-            else:
-                print("Wrong.")
-                self.num_wrong += 1
-            # Ask if the user wants to continue playing
-            choice = input("Do you want to continue playing? (y/n): ").lower()
-            if choice != "y":
-                break
-        # Print the final score
-        print("Game over!")
-        print(f"Number of correct answers: {self.num_correct}")
-        print(f"Number of wrong answers: {self.num_wrong}")
