@@ -1,5 +1,5 @@
 import random
-
+"""Mateen used the with open to access the questions from the file and f string to display the game prompts"""
 class TriviaGame:
     #open question
     def __init__(self, file):
