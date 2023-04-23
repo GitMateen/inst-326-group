@@ -19,9 +19,9 @@ class TriviaGame:
                     self.questions[level].append(line.split(','))
 # start the game and enter name and level
     def start(self):
-        self.player1 = input("Enter player 1's name: ")
-        self.player2 = input("Enter player 2's name: ")
-        level = input("Enter the level you want to play on (easy, medium, hard): ")
+        self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge Start by Entering player 1's name: ")
+        self.player2 = input("player 2 enter your name: ")
+        level = input("Enter the level that you both want to play on (easy, medium, hard): ")
         self.play(level)
 # play the game for 5 rounds and keeps score
     def play(self, level):
