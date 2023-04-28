@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-
 questions = {
-=======
-class Questions:
-    def __init__(self):
-        self.questions = {
->>>>>>> 33e8a71264c748780064025aa4cecdb6fe6d06cb
             "easy": [
                 "What movie features a young lion named Simba and his journey to become king of the Pride Lands?",
                 "What movie is based on the story of a wooden puppet who dreams of becoming a real boy?",
@@ -30,7 +23,6 @@ class Questions:
                 "In the movie The Wolf of Wall Street, what is the name of the character played by Leonardo DiCaprio?"
             ]
         }
-<<<<<<< HEAD
 answers = {
           "The Lion King": "easy",
           "Pinocchio": "easy",
@@ -52,24 +44,3 @@ answers = {
 }
 
     
-=======
-        self.answers = { 
-            "The Lion King": "easy",
-            "Pinocchio": "easy",
-            "Monsters, Inc.": "easy",
-            "The Wizard of Oz": "easy",
-            "The Breakfast Club": "easy",
-            "Remember the Titans": "medium",
-            "Spirited Away": "medium",
-            "Jumanji": "medium",
-            "The DeLorean": "medium",
-            "The Matrix": "medium",
-            "Taken": "medium",
-            "Top Gun: Maverick": "hard",
-            "Solomon Northup": "hard",
-            "James Cameron": "hard",
-            "Patrick Bateman": "hard",
-            "Kim": "hard",
-            "Jordan Belfort": "hard"
-        }
->>>>>>> 33e8a71264c748780064025aa4cecdb6fe6d06cb
