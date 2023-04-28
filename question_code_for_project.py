@@ -1,5 +1,5 @@
 
- self.questions = {
+questions = {
             "easy": [
                 "What movie features a young lion named Simba and his journey to become king of the Pride Lands?",
                 "What movie is based on the story of a wooden puppet who dreams of becoming a real boy?",
@@ -25,22 +25,24 @@
                 "In the movie The Wolf of Wall Street, what is the name of the character played by Leonardo DiCaprio?"
             ]
         }
-        self.answers = {
-            "The Lion King": "easy",
-            "Pinocchio": "easy",
-            "Monsters, Inc.": "easy",
-            "The Wizard of Oz": "easy",
-            "The Breakfast Club": "easy",
-            "Remember the Titans": "medium",
-            "Spirited Away": "medium",
-            "Jumanji": "medium",
-            "The DeLorean": "medium",
-            "The Matrix": "medium",
-            "Taken": "medium",
-            "Top Gun: Maverick": "hard",
-            "Solomon Northup": "hard",
-            "James Cameron": "hard",
-            "Patrick Bateman": "hard",
-            "Kim": "hard"
-            "Jordan Belfort": "hard"
-        }
+answers = {
+          "The Lion King": "easy",
+          "Pinocchio": "easy",
+          "Monsters, Inc.": "easy",
+          "The Wizard of Oz": "easy",
+          "The Breakfast Club": "easy",
+          "Remember the Titans": "medium",
+          "Spirited Away": "medium",
+          "Jumanji": "medium",
+          "The DeLorean": "medium",
+          "The Matrix": "medium",
+          "Taken": "medium",
+          "Top Gun: Maverick": "hard",
+          "Solomon Northup": "hard",
+          "James Cameron": "hard",
+          "Patrick Bateman": "hard",
+          "Kim": "hard",
+          "Jordan Belfort": "hard",
+}
+
+    
