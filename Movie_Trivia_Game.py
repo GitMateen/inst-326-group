@@ -74,3 +74,10 @@ class Player:
         There is one final question break the tie and decide a winner.
         """
         pass
+
+    def get_unasked_question(self):
+        """
+        Get the random questions that have not been asked yet in the current game round.
+        Implement this in the play method at the end.
+        """
+        pass
