@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 
 questions = {
+=======
+class Questions:
+    def __init__(self):
+        self.questions = {
+>>>>>>> 33e8a71264c748780064025aa4cecdb6fe6d06cb
             "easy": [
                 "What movie features a young lion named Simba and his journey to become king of the Pride Lands?",
                 "What movie is based on the story of a wooden puppet who dreams of becoming a real boy?",
@@ -14,17 +20,17 @@ questions = {
                 "In the movie Back to the Future, what is the name of the time machine?",
                 "Which movie features a character named Neo, who discovers he is living in a simulated reality?", 
                 "Which movie features a retired CIA agent who must protect his family from a group of assassins?"
-             
             ],
             "hard": [
-                "What was the top grossing movie in 2022",
+                "What was the top grossing movie in 2022?",
                 "Who is the character in the movie 12 years a slave who was a free man but kidnapped and sold into slavery?",
-                "who directed avatar the movie (2009)?",
+                "Who directed Avatar the movie (2009)?",
                 "In the movie American Psycho, what is the name of the character played by Christian Bale?",
                 "In the movie Parasite, what is the name of the family who cons their way into working for a wealthy family?",
                 "In the movie The Wolf of Wall Street, what is the name of the character played by Leonardo DiCaprio?"
             ]
         }
+<<<<<<< HEAD
 answers = {
           "The Lion King": "easy",
           "Pinocchio": "easy",
@@ -46,3 +52,24 @@ answers = {
 }
 
     
+=======
+        self.answers = { 
+            "The Lion King": "easy",
+            "Pinocchio": "easy",
+            "Monsters, Inc.": "easy",
+            "The Wizard of Oz": "easy",
+            "The Breakfast Club": "easy",
+            "Remember the Titans": "medium",
+            "Spirited Away": "medium",
+            "Jumanji": "medium",
+            "The DeLorean": "medium",
+            "The Matrix": "medium",
+            "Taken": "medium",
+            "Top Gun: Maverick": "hard",
+            "Solomon Northup": "hard",
+            "James Cameron": "hard",
+            "Patrick Bateman": "hard",
+            "Kim": "hard",
+            "Jordan Belfort": "hard"
+        }
+>>>>>>> 33e8a71264c748780064025aa4cecdb6fe6d06cb

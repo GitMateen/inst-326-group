@@ -45,3 +45,39 @@ class TriviaGame:
                 self.score2 += 1
             else:
                 print(f"Incorrect. The correct answer is {question2[1]}")
+
+class Player:
+    """
+    A class representing a player in the movie trivia game.
+    """
+    def __init__(self):
+        pass
+
+    def name(self):
+        pass
+
+    def score(self):
+        """
+        Keeps track of player's score and updates them per round of questions.
+        """
+        pass
+
+    def final_score(self):
+        """
+        Prints out the final socre after the 5 rounds. If its a tie, the code will start the tie_breaker method.
+        """
+        pass
+
+    def tie_breaker(self):
+        """
+        When player_one and player_two have the same score at the end of all the rounds. 
+        There is one final question break the tie and decide a winner.
+        """
+        pass
+
+    def get_unasked_question(self):
+        """
+        Get the random questions that have not been asked yet in the current game round.
+        Implement this in the play method at the end.
+        """
+        pass
