@@ -1,6 +1,6 @@
 import random
-from question_code_for_project import questions
-from question_code_for_project import answers
+from question_code_for_project import questions as questions
+from question_code_for_project import answers as answers
 
 """Mateen used the with open to access the questions from the file and f string to display the game prompts"""
 class TriviaGame:
@@ -48,7 +48,30 @@ class TriviaGame:
                 self.score2 += 1
             else:
                 print(f"Incorrect. The correct answer is {question2[1]}")
-
+                
+class Scores:       
+    """Class representing the score of a player"""  
+    def __init__(self, score):
+        self.score = score
+            
+    def __add__(self, other):
+        """Adds a players score with a number.
+       
+        Args:
+            other (int): number being added to a player's score.
+        """  
+        combined_score = self.score + other
+        return Scores(combined_score)
+    
+    def __sub__(self, other):
+        """Subtracts from a players score
+        Args:
+            other (int): number being used to subtract from the player's score.
+        """
+        removed_points = self.score - other
+        return Scores(removed_points)
+    
+    
 class Player:
     """
     A class representing a player in the movie trivia game.
