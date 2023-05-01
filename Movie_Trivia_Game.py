@@ -108,3 +108,6 @@ class Player:
         #put all the questions that haven't been asked yet. append those to the get_unasked_question variable
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
+    
+game = TriviaGame()
+game.start()
