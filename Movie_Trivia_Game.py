@@ -1,6 +1,5 @@
 import random
-from question_code_for_project import questions as questions
-from question_code_for_project import answers as answers
+from question_code_for_project import questions, answers
 
 class TriviaGame:
     #open question
@@ -11,12 +10,15 @@ class TriviaGame:
         self.player1 = ''
         self.player2 = ''
 
-# start the game and enter name and level
+ # start the game and enter name and level
     def start(self):
-        self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge Start by Entering player 1's name: ")
-        self.player2 = input("player 2 enter your name: ")
+        self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
+        self.player2 = input("Player 2 enter your name: ")
         level = input("Enter the level that you both want to play on (easy, medium, hard): ")
+        while level not in ["easy", "medium", "hard"]:
+            level = input("Invalid level. Enter the level that you both want to play on (easy, medium, hard): ")
         self.play(level)
+        
 # play the game for 5 rounds and keeps score
     def play(self, level):
         for i in range(5):
