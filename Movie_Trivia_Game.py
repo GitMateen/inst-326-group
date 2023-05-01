@@ -106,4 +106,8 @@ class Player:
         Get the random questions that have not been asked yet in the current game round.
         Implement this in the play method at the end.
         """
+        # get_unasked_question = [] things will be appended to it at the end.
+        #for x in . loop through the asked questions
+        #put all the questions that haven't been asked yet. append those to the get_unasked_question variable
+        #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
