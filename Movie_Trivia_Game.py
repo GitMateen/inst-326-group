@@ -11,15 +11,7 @@ class TriviaGame:
         self.score2 = 0
         self.player1 = ''
         self.player2 = ''
-        with open(file) as file: #with open file
-            level = ''
-            for line in file:
-                line = line.strip()
-                if line in ['easy', 'medium', 'hard']:
-                    level = line
-                    self.questions[level] = []
-                else:
-                    self.questions[level].append(line.split(','))
+
 # start the game and enter name and level
     def start(self):
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge Start by Entering player 1's name: ")
