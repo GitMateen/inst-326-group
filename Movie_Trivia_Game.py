@@ -4,8 +4,8 @@ from question_code_for_project import answers as answers
 
 class TriviaGame:
     #open question
-    def __init__(self, file):
-        self.questions = {}
+    def __init__(self):
+        self.questions = questions
         self.score1 = 0
         self.score2 = 0
         self.player1 = ''
@@ -22,23 +22,24 @@ class TriviaGame:
         for i in range(5):
             # Randomly select a question from the chosen level's dictionary and ask the first player
             question1 = random.choice(self.questions[level])
-            print(f"{self.player1}, {question1[0]}") #f string
+            print(f"{self.player1}, {question1}")
             answer1 = input("Your answer: ")
-            if answer1.lower() == question1[1].lower():
+            if answer1.lower() == answers[level][question1].lower():
                 print("Correct!")
                 self.score1 += 1
             else:
-                print(f"Incorrect. The correct answer is {question1[1]}")
+                print(f"Incorrect. The correct answer is {answers[level][question1]}")
 
             # Randomly select a question from the same level's dictionary and ask the second player
             question2 = self.get_unasked_question(level, [question1])
-            print(f"{self.player2}, {question2[0]}")
+            print(f"{self.player2}, {question2}")
             answer2 = input("Your answer: ")
-            if answer2.lower() == question2[1].lower():
+            if answer2.lower() == answers[level][question2].lower():
                 print("Correct!")
                 self.score2 += 1
             else:
-                print(f"Incorrect. The correct answer is {question2[1]}")
+                print(f"Incorrect. The correct answer is {answers[level][question2]}")
+
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
