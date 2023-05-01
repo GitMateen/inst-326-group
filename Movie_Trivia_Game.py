@@ -2,7 +2,6 @@ import random
 from question_code_for_project import questions as questions
 from question_code_for_project import answers as answers
 
-"""Mateen used the with open to access the questions from the file and f string to display the game prompts"""
 class TriviaGame:
     #open question
     def __init__(self, file):
@@ -40,7 +39,10 @@ class TriviaGame:
                 self.score2 += 1
             else:
                 print(f"Incorrect. The correct answer is {question2[1]}")
-                
+    def get_unasked_question(self, level, asked_questions):
+        unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
+        return random.choice(unasked_questions)
+    
 class Scores:       
     """Class representing the score of a player"""  
     def __init__(self, score):
