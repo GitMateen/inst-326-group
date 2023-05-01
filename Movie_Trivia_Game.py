@@ -33,6 +33,7 @@ class TriviaGame:
                 print(f"Incorrect. The correct answer is {answers[level][question1]}")
 
             # Randomly select a question from the same level's dictionary and ask the second player
+            asked_questions = [question1]
             question2 = self.get_unasked_question(level, [question1])
             print(f"{self.player2}, {question2}")
             answer2 = input("Your answer: ")
