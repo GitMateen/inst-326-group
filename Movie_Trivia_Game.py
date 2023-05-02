@@ -23,8 +23,8 @@ class TriviaGame:
     def play(self, level):
         asked_questions = []
         for i in range(5):
-              if not self.continue_playing:
-                break
+             if not self.continue_playing:
+               break
             # Randomly select an unasked question from the chosen level's dictionary and ask the first player
             question1 = self.get_unasked_question(level, asked_questions)
             asked_questions.append(question1)
@@ -52,8 +52,8 @@ class TriviaGame:
         print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
         
             # Check if the user wants to continue playing
-            continue_input = input("Do you want to continue playing? (y/n) ")
-            self.continue_playing = continue_input.lower() == 'y'
+           continue_input = input("Do you want to continue playing? (y/n) ")
+           self.continue_playing = continue_input.lower() == 'y'
      
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
