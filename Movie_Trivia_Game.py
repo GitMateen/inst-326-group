@@ -21,9 +21,11 @@ class TriviaGame:
         
 # play the game for 5 rounds and keeps score
     def play(self, level):
+        asked_questions = []
         for i in range(5):
-            # Randomly select a question from the chosen level's dictionary and ask the first player
-            question1 = random.choice(self.questions[level])
+            # Randomly select an unasked question from the chosen level's dictionary and ask the first player
+            question1 = self.get_unasked_question(level, asked_questions)
+            asked_questions.append(question1)
             print(f"{self.player1}, {question1}")
             answer1 = input("Your answer: ")
             if answer1.lower() == answers[level][question1].lower():
@@ -32,9 +34,9 @@ class TriviaGame:
             else:
                 print(f"Incorrect. The correct answer is {answers[level][question1]}")
 
-            # Randomly select a question from the same level's dictionary and ask the second player
-            asked_questions = [question1]
-            question2 = self.get_unasked_question(level, [question1])
+            # Randomly select an unasked question from the same level's dictionary and ask the second player
+            question2 = self.get_unasked_question(level, asked_questions)
+            asked_questions.append(question2)
             print(f"{self.player2}, {question2}")
             answer2 = input("Your answer: ")
             if answer2.lower() == answers[level][question2].lower():
@@ -42,11 +44,14 @@ class TriviaGame:
                 self.score2 += 1
             else:
                 print(f"Incorrect. The correct answer is {answers[level][question2]}")
+                
+        # Print the final scores
+        print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
 
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
-    
+                
 class Scores:       
     """Class representing the score of a player"""  
     def __init__(self, score):
@@ -110,5 +115,10 @@ class Player:
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
     
-game = TriviaGame()
-game.start()
+play_again = True
+while play_again:
+    game = TriviaGame()
+    game.start()
+    play_again_input = input("Do you want to play again? (y/n) ")
+    play_again = play_again_input.lower() == 'y'
+
