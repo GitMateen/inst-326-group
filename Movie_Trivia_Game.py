@@ -9,7 +9,7 @@ class TriviaGame:
         self.score2 = 0
         self.player1 = ''
         self.player2 = ''
-
+        self.continue_playing = True
  # start the game and enter name and level
     def start(self):
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
@@ -23,6 +23,8 @@ class TriviaGame:
     def play(self, level):
         asked_questions = []
         for i in range(5):
+              if not self.continue_playing:
+                break
             # Randomly select an unasked question from the chosen level's dictionary and ask the first player
             question1 = self.get_unasked_question(level, asked_questions)
             asked_questions.append(question1)
@@ -33,7 +35,8 @@ class TriviaGame:
                 self.score1 += 1
             else:
                 print(f"Incorrect. The correct answer is {answers[level][question1]}")
-
+            if not self.continue_playing:
+                break
             # Randomly select an unasked question from the same level's dictionary and ask the second player
             question2 = self.get_unasked_question(level, asked_questions)
             asked_questions.append(question2)
@@ -47,7 +50,11 @@ class TriviaGame:
                 
         # Print the final scores
         print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
-
+        
+            # Check if the user wants to continue playing
+            continue_input = input("Do you want to continue playing? (y/n) ")
+            self.continue_playing = continue_input.lower() == 'y'
+     
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
