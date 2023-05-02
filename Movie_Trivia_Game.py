@@ -2,8 +2,23 @@ import random
 from question_code_for_project import questions, answers
 
 class TriviaGame:
+    """Class representing a Trivia Game.
+    
+    Attributes:
+        questions (dict): A dictionary of movie questions.
+        score1 (int): Player's 1 score.
+        score2 (int): Player's 2 score.
+        player1 (str): Player's 1 name.
+        player2 (str): Player's 2 name.
+        continue_playing (boolean): Option to continue playing the Trivia Game or not.
+    """
     #open question
     def __init__(self):
+        """Initializes, sets attributes.
+        
+        Side effects:
+            Sets attributes.
+        """
         self.questions = questions
         self.score1 = 0
         self.score2 = 0
@@ -12,6 +27,11 @@ class TriviaGame:
         self.continue_playing = True
  # start the game and enter name and level
     def start(self):
+        """Starts the game by taking the players names and difficulty. 
+        
+        Side effects:
+            Changes player1's and player2's attributes.
+        """
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
         self.player2 = input("Player 2 enter your name: ")
         level = input("Enter the level that you both want to play on (easy, medium, hard): ")
@@ -21,6 +41,14 @@ class TriviaGame:
         
     # play the game for 5 rounds and keeps score
     def play(self, level):
+        """Starts playing the game to both players. Plays the game for 5 rounds, for each player.
+        
+        Args:
+            level (str): the difficulty the players chose (easy, medium, or hard).
+        
+        Side effects:
+             Prints to stdout        
+        """
         asked_questions = []
         for i in range(5):
             if not self.continue_playing:
@@ -52,17 +80,30 @@ class TriviaGame:
         print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
         
             # Check if the user wants to continue playing
-          continue_input = input("Do you want to continue playing? (y/n) ")
-          self.continue_playing = continue_input.lower() == 'y'
+        continue_input = input("Do you want to continue playing? (y/n) ")
+        self.continue_playing = continue_input.lower() == 'y'
      
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
                 
 class Scores:       
-    """Class representing the score of a player"""  
+    """Class representing the score of a player
+    
+    Attributes:
+        score (int): a player's score.
+    """ 
     def __init__(self, score):
+        """Initializes, sets attributes.
+        
+        Args:
+            score (int): a player's score.
+        
+        Side effects:
+            Sets attributes.
+        """
         self.score = score
+       
             
     def __add__(self, other):
         """Adds a players score with a number.
@@ -71,7 +112,7 @@ class Scores:
             other (int): number being added to a player's score.
         """  
         combined_score = self.score + other
-        return Scores(combined_score)
+        return combined_score
     
     def __sub__(self, other):
         """Subtracts from a players score
@@ -79,7 +120,7 @@ class Scores:
             other (int): number being used to subtract from the player's score.
         """
         removed_points = self.score - other
-        return Scores(removed_points)
+        return removed_points
     
     
 class Player:
@@ -121,7 +162,7 @@ class Player:
         #put all the questions that haven't been asked yet. append those to the get_unasked_question variable
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
-    
+
 play_again = True
 while play_again:
     game = TriviaGame()
