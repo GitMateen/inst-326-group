@@ -19,12 +19,12 @@ class TriviaGame:
             level = input("Invalid level. Enter the level that you both want to play on (easy, medium, hard): ")
         self.play(level)
         
-# play the game for 5 rounds and keeps score
+    # play the game for 5 rounds and keeps score
     def play(self, level):
         asked_questions = []
         for i in range(5):
-             if not self.continue_playing:
-               break
+            if not self.continue_playing:
+                break
             # Randomly select an unasked question from the chosen level's dictionary and ask the first player
             question1 = self.get_unasked_question(level, asked_questions)
             asked_questions.append(question1)
