@@ -51,37 +51,37 @@ class TriviaGame:
         """
         asked_questions = []
         for i in range(5):
-            if not self.continue_playing:
-                break
-            # Randomly select an unasked question from the chosen level's dictionary and ask the first player
-            question1 = self.get_unasked_question(level, asked_questions)
-            asked_questions.append(question1)
-            print(f"{self.player1}, {question1}")
-            answer1 = input("Your answer: ")
-            if answer1.lower() == answers[level][question1].lower():
-                print("Correct!")
-                self.score1 += 1
-            else:
-                print(f"Incorrect. The correct answer is {answers[level][question1]}")
-            if not self.continue_playing:
-                break
-            # Randomly select an unasked question from the same level's dictionary and ask the second player
-            question2 = self.get_unasked_question(level, asked_questions)
-            asked_questions.append(question2)
-            print(f"{self.player2}, {question2}")
-            answer2 = input("Your answer: ")
-            if answer2.lower() == answers[level][question2].lower():
-                print("Correct!")
-                self.score2 += 1
-            else:
-                print(f"Incorrect. The correct answer is {answers[level][question2]}")
-            
-        # Print the current scores
-        print(f"Current Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
-        
-        # Check if the players want to continue playing
-        continue_input = input("Do you want to continue playing? (y/n) ")
-        self.continue_playing = continue_input.lower() == 'y'
+                if not self.continue_playing:
+                    break
+                # Randomly select an unasked question from the chosen level's dictionary and ask the first player
+                question1 = self.get_unasked_question(level, asked_questions)
+                asked_questions.append(question1)
+                print(f"{self.player1}, {question1}")
+                answer1 = input("Your answer: ")
+                if answer1.lower() == answers[level][question1].lower():
+                    print("Correct!")
+                    self.score1 += 1
+                else:
+                    print(f"Incorrect. The correct answer is {answers[level][question1]}")
+                if not self.continue_playing:
+                    break
+                # Randomly select an unasked question from the same level's dictionary and ask the second player
+                question2 = self.get_unasked_question(level, asked_questions)
+                asked_questions.append(question2)
+                print(f"{self.player2}, {question2}")
+                answer2 = input("Your answer: ")
+                if answer2.lower() == answers[level][question2].lower():
+                    print("Correct!")
+                    self.score2 += 1
+                else:
+                    print(f"Incorrect. The correct answer is {answers[level][question2]}")
+                    
+                # Print the current scores
+                print(f"Current Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
+                
+                # Check if the players want to continue playing
+                continue_input = input("Do you want to continue playing? (y/n) ")
+                self.continue_playing = continue_input.lower() == 'y'
      
     def get_unasked_question(self, level, asked_questions):
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
@@ -163,10 +163,11 @@ class Player:
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
 
+
+
 play_again = True
 while play_again:
     game = TriviaGame()
     game.start()
     play_again_input = input("Do you want to play again? (y/n) ")
     play_again = play_again_input.lower() == 'y'
-
