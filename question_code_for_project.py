@@ -1,4 +1,3 @@
-import random
 questions = {
             "easy": [
                 "What movie features a young lion named Simba and his journey to become king of the Pride Lands?",
