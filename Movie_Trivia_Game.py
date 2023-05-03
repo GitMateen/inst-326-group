@@ -75,11 +75,11 @@ class TriviaGame:
                 self.score2 += 1
             else:
                 print(f"Incorrect. The correct answer is {answers[level][question2]}")
-                
-        # Print the final scores
-        print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
+            
+        # Print the current scores
+        print(f"Current Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
         
-            # Check if the user wants to continue playing
+        # Check if the players want to continue playing
         continue_input = input("Do you want to continue playing? (y/n) ")
         self.continue_playing = continue_input.lower() == 'y'
      
