@@ -149,6 +149,8 @@ class Player:
         """
         When player_one and player_two have the same score at the end of all the rounds. 
         There is one final question break the tie and decide a winner.
+        There are 11 questions per game round. 5 rounds so 10 qeustions asked. if we need a tiebreaker,
+        we will ask the 11th questions that has not been asked yet.
         """
         pass
 
@@ -163,6 +165,7 @@ class Player:
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
 
+<<<<<<< HEAD
 
 
 play_again = True
@@ -171,3 +174,7 @@ while play_again:
     game.start()
     play_again_input = input("Do you want to play again? (y/n) ")
     play_again = play_again_input.lower() == 'y'
+=======
+if __name__ == "__main__":
+    pass
+>>>>>>> b518f0e (updates)
