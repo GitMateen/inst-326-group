@@ -119,14 +119,5 @@ class Player:
         #we need 6 questions for easy mode. we only have 5 questions. imma add one more question later
         pass
 
-    
-play_again = True
-
-while play_again:
-    game = TriviaGame()
-    game.start()
-    play_again_input = input("Do you want to play again? (y/n) ")
-    play_again = play_again_input.lower() == 'y'
-    
 if __name__ == "__main__":
     pass
