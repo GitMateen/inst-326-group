@@ -2,35 +2,33 @@ import random
 from question_code_for_project import questions, answers
 
 class TriviaGame:
-    #open question
-    def __init__(self):
-        """
-        Primary author:
-        Suporting author:
-        Supporting author: 
+    """A class representing a game of movie trivia.
 
-        Initializes, sets attributes.
-        
-        Side effects:
-            Sets attributes.
-        """
+    Attributes:
+    questions (dict): A dictionary containing questions for different levels.
+    score1 (int): The score of player 1.
+    score2 (int): The score of player 2.
+    player1 (str): The name of player 1.
+    player2 (str): The name of player 2.
+    continue_playing (bool): A flag indicating whether the game should continue.
+
+    Methods:
+    start(): Begins the game and prompts players to enter their names and the desired level of play.
+    play(level): Plays the game for 5 rounds and keeps score.
+    get_unasked_question(level, asked_questions): Returns a randomly selected unasked question from the specified level's dictionary.
+    """
+
+    def __init__(self):
         self.questions = questions
         self.score1 = 0
         self.score2 = 0
         self.player1 = ''
         self.player2 = ''
         self.continue_playing = True
- # start the game and enter name and level
+
+
     def start(self):
-        """
-        Primary author:
-        Suporting author:
-        Supporting author:
-        Starts the game by taking the players names and difficulty. 
-        
-        Side effects:
-            Changes player1's and player2's attributes.
-        """
+        """Begins the game and prompts players to enter their names and the desired level of play."""
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
         self.player2 = input("Player 2 enter your name: ")
         level = input("Enter the level that you both want to play on (easy, medium, hard): ")
@@ -41,17 +39,17 @@ class TriviaGame:
     # play the game for 5 rounds and keeps score
     def play(self, level):
         """
-        Primary author:
-        Suporting author:
-        Supporting author:
-        
-        Starts playing the game to both players. Plays the game for 5 rounds, for each player.
-        
+        Main Author: Mateen Lachir : F - Strings 
+        Play the game for 5 rounds and keep score.
+
         Args:
-            level (str): the difficulty the players chose (easy, medium, or hard).
-        
+            level (str): the level of the game to play (e.g., 'easy', 'medium', or 'hard')
+
         Side effects:
-             Prints to stdout        
+            - Updates the game score for player 1 and player 2.
+            - Prints messages to the console to prompt the user for input and to display the results of each round.
+            - Prints the final scores to the console.
+
         """
         asked_questions = []
         for i in range(5):
@@ -85,10 +83,16 @@ class TriviaGame:
         
      
     def get_unasked_question(self, level, asked_questions):
-        """ 
-        Primary author:
-        Suporting author:
-        Supporting author:
+        """
+        Main Author Mateen Lachir : List Comprehension.
+        Returns a randomly selected unasked question from the specified level's dictionary.
+
+        Args:
+            level (str): the level of the game to play (e.g., 'easy', 'medium', or 'hard')
+            asked_questions (list): a list of questions that have already been asked
+
+        Returns:
+            str: a randomly selected unasked question from the specified level's dictionary
         """
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
