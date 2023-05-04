@@ -162,7 +162,7 @@ class Scores:
     """Class representing the score of a player"""  
     def __init__(self, score):
         """
-        Primary author:
+        Primary author: Romeo Alvarenga
         Suporting author:
         Supporting author:
 
@@ -182,12 +182,15 @@ class Scores:
         Suporting author:
         Supporting author:
 
-        Adds a players score with a number.
+        Adds a players score another person score.
        
         Args:
             other (int): number being added to a player's score.
+            
+        Returns:
+            The added integer.
         """  
-        combined_score = self.score + other
+        combined_score = self.score + other.score
         return Scores(combined_score)
     
     def __sub__(self, other):
@@ -196,32 +199,50 @@ class Scores:
         Suporting author:
         Supporting author:
 
-        Subtracts from a players score
+        Subtracts from a players score by another player score.
         Args:
             other (int): number being used to subtract from the player's score.
+        
+        Returns:
+            The subtracted integer/
         """
-        removed_points = self.score - other
+        removed_points = self.score - other.score
         return Scores(removed_points)
     
-    def score(self):
+    def __and__(self, other):
+        """ 
+        Primary author:
+        Suporting author:
+        Supporting author:
+        
+        Takes in sets as scores and gives union of score from two sets.
+        
+        Args:
+            other (set): a set of integers for scores.
+            
+        Returns:
+            union set
+        """
+        combine = self.score & other.score
+        return Scores(combine)
+
+    def __or__(self, other):
         """
         Primary author:
         Suporting author:
         Supporting author:
-
-        Keeps track of player's score and updates them per round of questions.
+        
+        Takes in sets of scores and gives intersection of scores from the sets.
+        
+        Args:
+            other (set): a set of integers for scores.
+            
+        Returns:
+            Intersection of set.
         """
-        pass
+        combine = self.score | other.score
+        return Scores(combine)
     
-    def final_score(self):
-        """
-        Primary author:
-        Suporting author:
-        Supporting author:
-
-        Prints out the final socre after the 5 rounds. If its a tie, the code will start the tie_breaker method.
-        """
-        pass
     
 play_again = True
 
