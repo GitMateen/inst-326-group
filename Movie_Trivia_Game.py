@@ -104,10 +104,8 @@ class Player(TriviaGame):
     def __init__(self):
         """
         Primary author: Akpalu
-        Suporting author:
-        Supporting author:
 
-        Emmanuel used to super(). 
+        Emmanuel used inheritance. 
 
         """
         super().__init__()
@@ -115,10 +113,8 @@ class Player(TriviaGame):
     def tie_breaker(self):
         """
         Primary author: Emmanuel Akpalu
-        Suporting author:
-        Supporting author:
 
-        Emmanuel used f-strings.
+        Emmanuel used conditional expressions.
         
         Starts a tiebreaker round to determine the winner in case of a tie. The level of difficulty is entered by the user. 
         The tiebreaker question is randomly selected from the list of unasked questions of the chosen level. 
