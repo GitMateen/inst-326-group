@@ -96,19 +96,35 @@ class TriviaGame:
         """
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
+
+    def check_for_tie(self):
+        """
+        Check if there is a tie between the players and call the tie_breaker method if needed.
+
+        Primary author: Emmanuel Akpalu
+        Emmanuel used a list comprehension.
+
+        Side effects:
+        - Prints a message and calls the tie_breaker method if there is a tie.
+        """
+        if self.score1 == self.score2:
+            print("The game ended in a tie! Starting a tiebreaker round.")
+            tiebreaker_player = Player(self.score1, self.score2, self.player1, self.player2)
+            [tiebreaker_player.tie_breaker() for x in range(1)]
+
     
 class Player(TriviaGame):
     """
     A class representing a player in the movie trivia game.
     """
-    def __init__(self):
+    def __init__(self, score1, score2, player1, player2):
         """
         Primary author: Akpalu
 
         Emmanuel used inheritance. 
 
         """
-        super().__init__()
+        super().__init__(self, score1, score2, player1, player2)
 
     def tie_breaker(self):
         """
