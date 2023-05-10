@@ -30,7 +30,6 @@ class TriviaGame:
         self.player2 = ''
         self.continue_playing = True
 
-
     def start(self):
         """Begins the game and prompts players to enter their names and the desired level of play."""
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
@@ -85,7 +84,6 @@ class TriviaGame:
         # Print the final scores
         print(f"Final Scores:\n{self.player1}: {self.score1}\n{self.player2}: {self.score2}")
         
-     
     def get_unasked_question(self, level, asked_questions):
         """
         Main Author Mateen Lachir : List Comprehension.
@@ -116,7 +114,6 @@ class TriviaGame:
             tiebreaker_player = Player(self.score1, self.score2, self.player1, self.player2)
             tiebreaker_player.tie_breaker(level = tie_breaker_level)
 
-    
 class Player(TriviaGame):
     """
     A class representing a player in the movie trivia game.
@@ -128,6 +125,7 @@ class Player(TriviaGame):
         __init__(score1, score2, player1, player2): Initializes a Player instance with the given scores and player names.
         tie_breaker(): Starts a tiebreaker round to determine the winner in case of a tie.
     """
+
     def __init__(self, score1, score2, player1, player2):
         """
         Initializes a Player instance with the given scores and player names.
@@ -137,7 +135,8 @@ class Player(TriviaGame):
             score2: Score for player 2
             player1: Name of player 1
             player2: Name of player 2
-        Primary author: Akpalu
+
+        Primary author: Akpalu.
         Emmanuel used super.
 
         """
@@ -156,7 +155,7 @@ class Player(TriviaGame):
         Returns:
             None
 
-        Primary author: Emmanuel Akpalu
+        Primary author: Emmanuel Akpalu.
         Emmanuel used conditional expressions.
         """
         print("We have a tiebreaker round to determine the winner!")
@@ -188,9 +187,10 @@ class Player(TriviaGame):
                 
 class Scores:       
     """Class representing the score of a player"""  
+    
     def __init__(self, score):
         """
-        Primary author: Romeo Alvarenga
+        Primary author: Romeo Alvarenga.
 
         Initializes, sets attributes.
         
@@ -204,7 +204,7 @@ class Scores:
             
     def __add__(self, other):
         """
-        Primary author:
+        Primary author: Romeo Alvarenga.
 
         Adds a players score another person score.
        
@@ -219,7 +219,7 @@ class Scores:
     
     def __sub__(self, other):
         """
-        Primary author:
+        Primary author: Romeo Alvarenga.
 
         Subtracts from a players score by another player score.
         Args:
@@ -233,7 +233,7 @@ class Scores:
     
     def __and__(self, other):
         """ 
-        Primary author:
+        Primary author: Romeo Alvarenga.
         
         Takes in sets as scores and gives union of score from two sets.
         
@@ -248,7 +248,7 @@ class Scores:
 
     def __or__(self, other):
         """
-        Primary author:
+        Primary author: Romeo Alvarenga.
         
         Takes in sets of scores and gives intersection of scores from the sets.
         
@@ -261,14 +261,10 @@ class Scores:
         combine = self.score | other.score
         return Scores(combine)
     
-    
-play_again = True
-
-while play_again:
-    game = TriviaGame()
-    game.start()
-    play_again_input = input("Do you want to play again? (y/n) ")
-    play_again = play_again_input.lower() == 'y'
-    
 if __name__ == "__main__":
-    pass
+    play_again = True
+    while play_again:
+        game = TriviaGame()
+        game.start()
+        play_again_input = input("Do you want to play again? (y/n) ")
+        play_again = play_again_input.lower() == 'y'
