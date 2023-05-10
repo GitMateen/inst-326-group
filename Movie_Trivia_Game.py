@@ -97,12 +97,12 @@ class TriviaGame:
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
 
-    def check_for_tie(self):
+    def check_for_tie(self, tie_breaker_level="Medium"):
         """
         Check if there is a tie between the players and call the tie_breaker method if needed.
 
         Primary author: Emmanuel Akpalu
-        Emmanuel used a list comprehension.
+        Emmanuel uses an optional argument. If the user doesn't provide a specific level, medium is used as the defualt level.
 
         Side effects:
         - Prints a message and calls the tie_breaker method if there is a tie.
@@ -110,7 +110,7 @@ class TriviaGame:
         if self.score1 == self.score2:
             print("The game ended in a tie! Starting a tiebreaker round.")
             tiebreaker_player = Player(self.score1, self.score2, self.player1, self.player2)
-            [tiebreaker_player.tie_breaker() for x in range(1)]
+            tiebreaker_player.tie_breaker(level = tie_breaker_level)
 
     
 class Player(TriviaGame):
