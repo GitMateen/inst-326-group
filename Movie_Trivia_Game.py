@@ -23,6 +23,7 @@ class TriviaGame:
         """
         Initializes a new instance of the class.
         """
+
         self.questions = questions
         self.score1 = 0
         self.score2 = 0
@@ -32,6 +33,7 @@ class TriviaGame:
 
     def start(self):
         """Begins the game and prompts players to enter their names and the desired level of play."""
+
         self.player1 = input("Hello, welcome to our Movie Trivia game where we will test your knowledge. Start by entering player 1's name: ")
         self.player2 = input("Player 2 enter your name: ")
         level = input("Enter the level that you both want to play on (easy, medium, hard): ")
@@ -52,8 +54,8 @@ class TriviaGame:
             - Updates the game score for player 1 and player 2.
             - Prints messages to the console to prompt the user for input and to display the results of each round.
             - Prints the final scores to the console.
-
         """
+
         asked_questions = []
         for i in range(5):
             if not self.continue_playing:
@@ -96,6 +98,7 @@ class TriviaGame:
         Returns:
             str: a randomly selected unasked question from the specified level's dictionary
         """
+
         unasked_questions = [question for question in self.questions[level] if question not in asked_questions]
         return random.choice(unasked_questions)
 
@@ -109,6 +112,7 @@ class TriviaGame:
         Side effects:
             Prints a message and calls the tie_breaker method if there is a tie.
         """
+
         if self.score1 == self.score2:
             print("The game ended in a tie! Starting a tiebreaker round.")
             tiebreaker_player = Player(self.score1, self.score2, self.player1, self.player2)
@@ -140,6 +144,7 @@ class Player(TriviaGame):
         Emmanuel used super.
 
         """
+
         super().__init__(self, score1, score2, player1, player2)
 
     def tie_breaker(self):
@@ -158,6 +163,7 @@ class Player(TriviaGame):
         Primary author: Emmanuel Akpalu.
         Emmanuel used conditional expressions.
         """
+
         print("We have a tiebreaker round to determine the winner!")
         level = input("Enter the level of difficulty for the tiebreaker round (easy, medium, hard): ")
         while level not in ["easy", "medium", "hard"]:
@@ -200,6 +206,7 @@ class Scores:
         Side effects:
             Sets attributes.
         """
+
         self.score = score
             
     def __add__(self, other):
@@ -213,7 +220,11 @@ class Scores:
             
         Returns:
             The added integer.
+        
+        Raises:
+            TypeError: If the other object is not an instance of Scores.
         """  
+
         combined_score = self.score + other.score
         return Scores(combined_score)
     
@@ -222,12 +233,17 @@ class Scores:
         Primary author: Romeo Alvarenga.
 
         Subtracts from a players score by another player score.
+
         Args:
             other (int): number being used to subtract from the player's score.
         
         Returns:
-            The subtracted integer/
+            The subtracted integer
+        
+        Raises:
+            TypeError: If the other object is not an instance of Scores.
         """
+
         removed_points = self.score - other.score
         return Scores(removed_points)
     
@@ -242,7 +258,11 @@ class Scores:
             
         Returns:
             union set
+        
+        Raises:
+            TypeError: If the other object is not a set.
         """
+
         combine = self.score & other.score
         return Scores(combine)
 
@@ -257,7 +277,11 @@ class Scores:
             
         Returns:
             Intersection of set.
+
+        Raises:
+            TypeError: If the other object is not a set.
         """
+        
         combine = self.score | other.score
         return Scores(combine)
     
