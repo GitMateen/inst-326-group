@@ -5,20 +5,24 @@ class TriviaGame:
     """A class representing a game of movie trivia.
 
     Attributes:
-    questions (dict): A dictionary containing questions for different levels.
-    score1 (int): The score of player 1.
-    score2 (int): The score of player 2.
-    player1 (str): The name of player 1.
-    player2 (str): The name of player 2.
-    continue_playing (bool): A flag indicating whether the game should continue.
+        questions (dict): A dictionary containing questions for different levels.
+        score1 (int): The score of player 1.
+        score2 (int): The score of player 2.
+        player1 (str): The name of player 1.
+        player2 (str): The name of player 2.
+        continue_playing (bool): A flag indicating whether the game should continue.
 
     Methods:
-    start(): Begins the game and prompts players to enter their names and the desired level of play.
-    play(level): Plays the game for 5 rounds and keeps score.
-    get_unasked_question(level, asked_questions): Returns a randomly selected unasked question from the specified level's dictionary.
+        start(): Begins the game and prompts players to enter their names and the desired level of play.
+        play(level): Plays the game for 5 rounds and keeps score.
+        get_unasked_question(level, asked_questions): Returns a randomly selected unasked question from the specified level's dictionary.
+        check_for_tie(): Checks if the game ended in a tie, if so it then executes the tie_breaker method.
     """
 
     def __init__(self):
+        """
+        Initializes a new instance of the class.
+        """
         self.questions = questions
         self.score1 = 0
         self.score2 = 0
@@ -101,11 +105,11 @@ class TriviaGame:
         """
         Check if there is a tie between the players and call the tie_breaker method if needed.
 
-        Primary author: Emmanuel Akpalu
+        Primary author: Emmanuel Akpalu.
         Emmanuel uses an optional argument. If the user doesn't provide a specific level, medium is used as the defualt level.
 
         Side effects:
-        - Prints a message and calls the tie_breaker method if there is a tie.
+            Prints a message and calls the tie_breaker method if there is a tie.
         """
         if self.score1 == self.score2:
             print("The game ended in a tie! Starting a tiebreaker round.")
@@ -116,32 +120,44 @@ class TriviaGame:
 class Player(TriviaGame):
     """
     A class representing a player in the movie trivia game.
+
+    Attributes:
+        Inherits attributes from TriviaGame class
+
+    Methods:
+        __init__(score1, score2, player1, player2): Initializes a Player instance with the given scores and player names.
+        tie_breaker(): Starts a tiebreaker round to determine the winner in case of a tie.
     """
     def __init__(self, score1, score2, player1, player2):
         """
-        Primary author: Akpalu
+        Initializes a Player instance with the given scores and player names.
 
-        Emmanuel used inheritance. 
+        Args:
+            score1: Score for player 1
+            score2: Score for player 2
+            player1: Name of player 1
+            player2: Name of player 2
+        Primary author: Akpalu
+        Emmanuel used super.
 
         """
         super().__init__(self, score1, score2, player1, player2)
 
     def tie_breaker(self):
         """
-        Primary author: Emmanuel Akpalu
-
-        Emmanuel used conditional expressions.
-        
         Starts a tiebreaker round to determine the winner in case of a tie. The level of difficulty is entered by the user. 
         The tiebreaker question is randomly selected from the list of unasked questions of the chosen level. 
         The score of the winner of the tiebreaker round is updated and the final scores and winner or tie message are printed.
         
         Side effects:
-        - Modifies the score of the winner of the tiebreaker round
-        - Prints the final scores and winner or tie message
+            Modifies the score of the winner of the tiebreaker round
+            Prints the final scores and winner or tie message
         
         Returns:
-        - None
+            None
+
+        Primary author: Emmanuel Akpalu
+        Emmanuel used conditional expressions.
         """
         print("We have a tiebreaker round to determine the winner!")
         level = input("Enter the level of difficulty for the tiebreaker round (easy, medium, hard): ")
@@ -175,8 +191,6 @@ class Scores:
     def __init__(self, score):
         """
         Primary author: Romeo Alvarenga
-        Suporting author:
-        Supporting author:
 
         Initializes, sets attributes.
         
@@ -191,8 +205,6 @@ class Scores:
     def __add__(self, other):
         """
         Primary author:
-        Suporting author:
-        Supporting author:
 
         Adds a players score another person score.
        
@@ -208,8 +220,6 @@ class Scores:
     def __sub__(self, other):
         """
         Primary author:
-        Suporting author:
-        Supporting author:
 
         Subtracts from a players score by another player score.
         Args:
@@ -224,8 +234,6 @@ class Scores:
     def __and__(self, other):
         """ 
         Primary author:
-        Suporting author:
-        Supporting author:
         
         Takes in sets as scores and gives union of score from two sets.
         
@@ -241,8 +249,6 @@ class Scores:
     def __or__(self, other):
         """
         Primary author:
-        Suporting author:
-        Supporting author:
         
         Takes in sets of scores and gives intersection of scores from the sets.
         
